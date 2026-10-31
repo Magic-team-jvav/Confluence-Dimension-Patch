@@ -5,7 +5,7 @@
             "name": "CONFLUENCE_DIMENSION_PATCH_TERRARIUM",
             "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
             "parameters": {
-                "class": "org/mesdag/confluence_dimension_patch/common/CDPArmPoses",
+                "class": "org/mesdag/confluence_dimension_patch/client/CDPArmPoses",
                 "field": "TERRARIUM"
             }
         }

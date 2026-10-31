@@ -1,28 +1,25 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "org.mesdag.confluence_dimension_patch.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "BiomeSourceMixin",
-    "ChunkGeneratorMixin",
-    "ChunkGeneratorStructureStateMixin",
-    "ChunkMapMixin",
-    "GameEntityEventMixin",
-    "LivingEntityEventsMixin",
-    "ModBiomesMixin",
-    "NoiseBasedChunkGeneratorMixin",
-    "OverworldUtilsMixin",
-    "PlacedFeatureMixin",
-    "StructureSetMixin",
-    "SurfaceSystemMixin"
-  ],
-  "client": [
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
+    "required": true,
+    "minVersion": "0.8",
+    "package": "org.mesdag.confluence_dimension_patch.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "BiomeSourceMixin",
+        "ChunkMapMixin",
+        "NoiseBasedChunkGeneratorMixin",
+        "OverworldUtilsMixin",
+        "PlacedFeatureAccessor",
+        "RandomStateMixin",
+        "RegistryDataLoader$RegistryDataMixin",
+        "StructurePlacementAccessor",
+        "StructureSetAccessor"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
   }
 }

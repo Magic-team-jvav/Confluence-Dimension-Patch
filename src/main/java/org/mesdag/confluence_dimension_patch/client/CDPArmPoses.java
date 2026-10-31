@@ -1,4 +1,4 @@
-package org.mesdag.confluence_dimension_patch.common;
+package org.mesdag.confluence_dimension_patch.client;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.util.Mth;

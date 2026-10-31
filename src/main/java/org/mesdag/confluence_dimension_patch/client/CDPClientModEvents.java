@@ -12,7 +12,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.mesdag.confluence_dimension_patch.ConfluenceDimensionPatch;
-import org.mesdag.confluence_dimension_patch.common.CDPArmPoses;
 import org.mesdag.confluence_dimension_patch.common.OtherWorld;
 
 import javax.annotation.ParametersAreNonnullByDefault;

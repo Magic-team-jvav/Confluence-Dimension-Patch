@@ -8,15 +8,15 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(BiomeSource.class)
 public abstract class BiomeSourceMixin implements IDimensionAccessor {
     @Unique
-    private boolean cdp$notOverworld = false;
+    private boolean cdp$isOtherworld;
 
     @Override
-    public void cdp$setIsNotOverworld() {
-        this.cdp$notOverworld = true;
+    public void cdp$setIsOtherworld() {
+        this.cdp$isOtherworld = true;
     }
 
     @Override
-    public boolean cdp$isNotOverworld() {
-        return cdp$notOverworld;
+    public boolean cdp$isOtherworld() {
+        return cdp$isOtherworld;
     }
 }
