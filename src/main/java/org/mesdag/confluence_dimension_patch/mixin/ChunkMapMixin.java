@@ -6,6 +6,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.RandomState;
 import org.mesdag.confluence_dimension_patch.common.OtherWorld;
+import org.mesdag.confluence_dimension_patch.common.worldgen.OtherWorldChunkGenerator;
 import org.mesdag.confluence_dimension_patch.mixed.IDimensionAccessor;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,6 +26,9 @@ public abstract class ChunkMapMixin {
         if (level.dimension() == OtherWorld.LEVEL) {
             IDimensionAccessor.of(generator.getBiomeSource()).cdp$setIsOtherworld();
             IDimensionAccessor.of(randomState).cdp$setIsOtherworld();
+            if (generator instanceof OtherWorldChunkGenerator otherWorldChunkGenerator) {
+                otherWorldChunkGenerator.cdp$bind(level);
+            }
         }
     }
 }

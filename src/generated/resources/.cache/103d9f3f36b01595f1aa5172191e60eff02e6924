@@ -1,3 +1,5 @@
-// 1.21.1	2025-07-02T12:05:49.4860923	Registries
-34e16873b7e37cdd8606a8648245b6306e3c5e02 data/confluence_dimension_patch/dimension/otherworld.json
+// 1.21.1	2026-11-09T22:03:59.4625533	Registries
+157122cbbd1b4f85b55ab9aaaceb57e335ea0a38 data/confluence_dimension_patch/dimension/otherworld.json
 a980994c32dc4a6ba29ab209881ddff6e859ce48 data/confluence_dimension_patch/dimension_type/otherworld.json
+55eb6a271eba6f420556a9460b22382bb429cab6 data/confluence_dimension_patch/dimension_type/terraria.json
+9ac825aa8ddc6c22d7dfe6d51f78a6512e90698f data/confluence_dimension_patch/worldgen/noise_settings/surface.json

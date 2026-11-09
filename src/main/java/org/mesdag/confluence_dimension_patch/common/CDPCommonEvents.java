@@ -6,14 +6,16 @@ import net.minecraft.world.entity.Mob;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import org.confluence.mod.Confluence;
+import org.confluence.mod.common.init.ModTabs;
 import org.confluence.mod.util.ModUtils;
 import org.mesdag.confluence_dimension_patch.ConfluenceDimensionPatch;
 
 @EventBusSubscriber(modid = ConfluenceDimensionPatch.MODID)
-public final class CDPGameEvents {
+public final class CDPCommonEvents {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void mobSpawn$PositionCheck(MobSpawnEvent.PositionCheck event) {
         Mob mob = event.getEntity();
@@ -29,6 +31,13 @@ public final class CDPGameEvents {
             if (id.getNamespace().equals(Confluence.MODID) && id.getPath().endsWith("new_world")) {
                 event.getEntity().addItem(ConfluenceDimensionPatch.TERRARIUM.toStack());
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void buildCreativeModeTabContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == ModTabs.TOOLS.getKey()) {
+            event.accept(ConfluenceDimensionPatch.TERRARIUM);
         }
     }
 }

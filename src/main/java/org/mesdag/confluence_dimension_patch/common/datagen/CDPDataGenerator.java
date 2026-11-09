@@ -20,6 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public final class CDPDataGenerator {
     private static final RegistrySetBuilder DATA_BUILDER = new RegistrySetBuilder()
             .add(Registries.DIMENSION_TYPE, OtherWorld::dimensionType)
+            .add(Registries.NOISE_SETTINGS, OtherWorld::noiseSettings)
             .add(Registries.LEVEL_STEM, OtherWorld::levelStem);
 
     @SubscribeEvent

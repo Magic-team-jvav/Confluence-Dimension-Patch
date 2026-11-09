@@ -12,9 +12,19 @@
         "RandomStateMixin",
         "RegistryDataLoader$RegistryDataMixin",
         "StructurePlacementAccessor",
-        "StructureSetAccessor"
+        "StructureSetAccessor",
+        "underworld.BedBlockMixin",
+        "underworld.FlowingFluidMixin",
+        "underworld.IBlockExtensionMixin",
+        "underworld.LavaFluidMixin",
+        "underworld.LevelStemAccessor",
+        "underworld.LiquidBlockMixin",
+        "underworld.RespawnAnchorBlockMixin",
+        "underworld.ServerPlayerMixin",
+        "underworld.WaterFluidMixin"
     ],
     "client": [
+        "underworld.LightTextureMixin"
     ],
     "injectors": {
         "defaultRequire": 1
