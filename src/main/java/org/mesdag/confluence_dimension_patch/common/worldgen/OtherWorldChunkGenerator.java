@@ -133,9 +133,8 @@ public class OtherWorldChunkGenerator extends NoiseBasedChunkGenerator implement
         chunk.noiseChunk = null;
         surface.applyCarvers(level, seed, random, biomeManager, structureManager, chunk, step);
         chunk.noiseChunk = null;
-        if (hasUnderworld() && step == GenerationStep.Carving.AIR
-                && underworld instanceof TerrariaUnderworldGenerator terrariaUnderworld) {
-            terrariaUnderworld.cdp$carveTunnels(level, chunk);
+        if (hasUnderworld() && step == GenerationStep.Carving.AIR) {
+            underworld.cdp$carveTunnels(level, chunk);
         }
     }
 

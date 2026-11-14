@@ -9,6 +9,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.biome.Climate;
 import org.confluence.mod.common.worldgen.BannedBiomeMultiNoiseBiomeSource;
+import org.confluence.mod.common.worldgen.biome.injector.BiomeSourceHandler;
 import org.confluence.mod.mixed.IInjectBiomeSource;
 import org.confluence.mod.util.OverworldUtils;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +27,7 @@ public class StackedBiomeSource extends BiomeSource implements IInjectBiomeSourc
 
     private final BiomeSource surface;
     private final BiomeSource underworld;
+    private @Nullable BiomeSourceHandler handler;
 
     public StackedBiomeSource(BiomeSource surface, BiomeSource underworld) {
         this.surface = surface;
@@ -59,6 +61,16 @@ public class StackedBiomeSource extends BiomeSource implements IInjectBiomeSourc
     }
 
     @Override
+    public void confluence$setHandler(@Nullable BiomeSourceHandler handler) {
+        this.handler = handler;
+    }
+
+    @Override
+    public @Nullable BiomeSourceHandler confluence$getHandler() {
+        return handler;
+    }
+
+    @Override
     public @Nullable Pair<Holder<Biome>, Holder<Biome>> confluence$getBiomePair() {
         return surface instanceof IInjectBiomeSource source ? source.confluence$getBiomePair() : null;
     }
@@ -67,7 +79,7 @@ public class StackedBiomeSource extends BiomeSource implements IInjectBiomeSourc
     public List<Holder<Biome>> confluence$getJungleBiomes() {
         return surface instanceof IInjectBiomeSource source
                 ? source.confluence$getJungleBiomes()
-                : possibleBiomes().stream().filter(OverworldUtils::isJungle).toList();
+                : IInjectBiomeSource.super.confluence$getJungleBiomes();
     }
 
     @Override

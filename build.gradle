@@ -132,7 +132,7 @@ repositories {
 }
 
 dependencies {
-    implementation(files("libs/ConfluenceOtherworld-neoforge-1.2.12+1.21.1-261105.jar"))
+    implementation("blank:ConfluenceOtherworld-1.21.1:1.2.12")
     implementation("blank:MagicLib-1.21.1:1.3.1")
 
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"

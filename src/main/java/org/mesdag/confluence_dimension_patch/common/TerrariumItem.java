@@ -2,8 +2,6 @@ package org.mesdag.confluence_dimension_patch.common;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundLevelEventPacket;
@@ -19,8 +17,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.DimensionTransition;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import org.confluence.lib.common.component.ModRarity;
 import org.confluence.lib.common.item.CustomRarityItem;
 
@@ -80,11 +76,9 @@ public class TerrariumItem extends CustomRarityItem {
         return stack;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        ClientLevel level = Minecraft.getInstance().level;
-        int dimension = level == null ? 0 : level.dimension() == OtherWorld.LEVEL ? 1 : 0;
+        int dimension = context.level() == null ? 0 : context.level().dimension() == OtherWorld.LEVEL ? 1 : 0;
         tooltipComponents.add(Component.translatable("tooltip.item.confluence.terrarium.2"));
         tooltipComponents.add(Component.translatable("tooltip.item.confluence.terrarium." + dimension).withStyle(ChatFormatting.AQUA));
     }
