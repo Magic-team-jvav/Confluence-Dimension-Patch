@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "confluence_dimension_patch:item/terrarium_otherworld",
+      "predicate": {
+        "confluence_dimension_patch:dimension": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "confluence_dimension_patch:item/terrarium_overworld"
+  }
+}

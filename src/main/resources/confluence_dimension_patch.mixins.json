@@ -1,0 +1,34 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "org.mesdag.confluence_dimension_patch.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "BiomeSourceMixin",
+        "ChunkMapMixin",
+        "NoiseBasedChunkGeneratorMixin",
+        "OverworldUtilsMixin",
+        "PlacedFeatureAccessor",
+        "RandomStateMixin",
+        "RegistryDataLoader$RegistryDataMixin",
+        "StructurePlacementAccessor",
+        "StructureSetAccessor",
+        "underworld.BedBlockMixin",
+        "underworld.FlowingFluidMixin",
+        "underworld.LavaFluidMixin",
+        "underworld.LevelStemAccessor",
+        "underworld.LiquidBlockMixin",
+        "underworld.PlayerMixin",
+        "underworld.RespawnAnchorBlockMixin",
+        "underworld.WaterFluidMixin"
+    ],
+    "client": [
+        "underworld.LightTextureMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}

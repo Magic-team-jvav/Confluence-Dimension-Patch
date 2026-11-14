@@ -1,0 +1,80 @@
+{
+  "type": "confluence_dimension_patch:otherworld",
+  "generator": {
+    "type": "confluence_dimension_patch:terraria",
+    "surface": {
+      "biome_source": {
+        "type": "minecraft:multi_noise",
+        "preset": "minecraft:overworld"
+      },
+      "settings": "confluence_dimension_patch:surface"
+    },
+    "underworld": {
+      "biome_source": {
+        "type": "minecraft:multi_noise",
+        "biomes": [
+          {
+            "biome": "confluence:ash_forest",
+            "parameters": {
+              "continentalness": [
+                -1.0,
+                1.0
+              ],
+              "depth": [
+                -1.0,
+                1.0
+              ],
+              "erosion": [
+                -1.0,
+                1.0
+              ],
+              "humidity": [
+                -0.3,
+                1.0
+              ],
+              "offset": 0.0,
+              "temperature": [
+                -0.3,
+                1.0
+              ],
+              "weirdness": [
+                -1.0,
+                1.0
+              ]
+            }
+          },
+          {
+            "biome": "confluence:ash_wasteland",
+            "parameters": {
+              "continentalness": [
+                -1.0,
+                1.0
+              ],
+              "depth": [
+                -1.0,
+                1.0
+              ],
+              "erosion": [
+                -1.0,
+                1.0
+              ],
+              "humidity": [
+                -1.0,
+                1.0
+              ],
+              "offset": 0.1,
+              "temperature": [
+                -1.0,
+                1.0
+              ],
+              "weirdness": [
+                -1.0,
+                1.0
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "confluence_dimension_patch.configuration.initialTerrarium": "初始盒中泰拉",
+  "confluence_dimension_patch.configuration.initialTerrarium.tooltip": "开启后开局将默认给予玩家一个盒中泰拉",
+  "confluence_dimension_patch.configuration.title": "汇流来世维度补丁",
+  "item.confluence_dimension_patch.terrarium": "盒中泰拉",
+  "message.confluence_dimension_patch.unavailable": "你不能在当前维度使用它！",
+  "tooltip.item.confluence.terrarium.0": "我的世界",
+  "tooltip.item.confluence.terrarium.1": "汇流来世",
+  "tooltip.item.confluence.terrarium.2": "目前位于"
+}

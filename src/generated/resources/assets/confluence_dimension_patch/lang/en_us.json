@@ -1,0 +1,10 @@
+{
+  "confluence_dimension_patch.configuration.initialTerrarium": "Initial Terrarium",
+  "confluence_dimension_patch.configuration.initialTerrarium.tooltip": "After opening, the opening will give the player a Terrarium by default",
+  "confluence_dimension_patch.configuration.title": "Confluence Dimension Patch",
+  "item.confluence_dimension_patch.terrarium": "Terrarium",
+  "message.confluence_dimension_patch.unavailable": "You can't use it in current dimension!",
+  "tooltip.item.confluence.terrarium.0": "Minecraft",
+  "tooltip.item.confluence.terrarium.1": "Confluence: Otherworld",
+  "tooltip.item.confluence.terrarium.2": "Currently In"
+}
