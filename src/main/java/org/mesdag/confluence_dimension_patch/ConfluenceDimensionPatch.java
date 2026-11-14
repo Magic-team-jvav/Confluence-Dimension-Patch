@@ -14,6 +14,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.confluence.lib.util.LibUtils;
+import org.mesdag.confluence_dimension_patch.client.CDPArmPoses;
 import org.mesdag.confluence_dimension_patch.client.CDPClientEvents;
 import org.mesdag.confluence_dimension_patch.common.*;
 import org.mesdag.confluence_dimension_patch.common.worldgen.OtherWorldChunkGenerator;
@@ -47,6 +48,7 @@ public class ConfluenceDimensionPatch {
         CDPCommonConfigs.register(context);
         CDPCommonEvents.init();
         if (LibUtils.isPhysicalClient()) {
+            CDPArmPoses.init();
             CDPClientEvents.init();
             container.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((minecraft, screen) -> new PortConfigurationScreen(container, screen)));
         }

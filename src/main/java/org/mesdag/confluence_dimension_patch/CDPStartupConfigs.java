@@ -7,7 +7,7 @@ public class CDPStartupConfigs {
 
     static void register() {
         PortConfigSpec.Builder builder = PortConfigSpec.builder(ConfluenceDimensionPatch.MODID);
-        ENABLE_TERRARIA_LIKE_WORLD_GENERATION = builder.define("enableTerrariaLikeWorldGeneration", false);
+        ENABLE_TERRARIA_LIKE_WORLD_GENERATION = builder.define("enableTerrariaLikeWorldGeneration", true);
         PortConfigSpec spec = builder.build();
         spec.load();
     }

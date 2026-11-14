@@ -5,6 +5,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 
 public final class CDPArmPoses {
+    public static void init() {}
+
     public static final HumanoidModel.ArmPose TERRARIUM = HumanoidModel.ArmPose.create("CONFLUENCE_DIMENSION_PATCH_TERRARIUM", false,
             (model, living, arm) -> {
                 if (living.isUsingItem()) {
