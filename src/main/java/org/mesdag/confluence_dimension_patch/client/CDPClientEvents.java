@@ -23,6 +23,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.confluence.mod.util.OverworldUtils;
 import org.joml.Matrix4f;
+import org.mesdag.confluence_dimension_patch.CDPStartupConfigs;
 import org.mesdag.confluence_dimension_patch.ConfluenceDimensionPatch;
 import org.mesdag.confluence_dimension_patch.common.OtherWorld;
 
@@ -50,7 +51,8 @@ public final class CDPClientEvents {
 
     @SubscribeEvent
     public static void viewport$ComputeFogColor(ViewportEvent.ComputeFogColor event) {
-        if (event.getCamera().getPosition().y < OverworldUtils.getCaveY() &&
+        if (CDPStartupConfigs.enableTerrariaLikeWorldGeneration() &&
+                event.getCamera().getPosition().y < OverworldUtils.getCaveY() &&
                 event.getCamera().getEntity().level().dimension() == OtherWorld.LEVEL
         ) {
             event.setRed(0.5F);
@@ -61,7 +63,8 @@ public final class CDPClientEvents {
 
     @SubscribeEvent
     public static void viewport$RenderFog(ViewportEvent.RenderFog event) {
-        if (event.getMode() == FogRenderer.FogMode.FOG_TERRAIN &&
+        if (CDPStartupConfigs.enableTerrariaLikeWorldGeneration() &&
+                event.getMode() == FogRenderer.FogMode.FOG_TERRAIN &&
                 event.getType() == FogType.NONE &&
                 event.getCamera().getPosition().y < OverworldUtils.getCaveY() &&
                 event.getCamera().getEntity().level().dimension() == OtherWorld.LEVEL
@@ -74,7 +77,7 @@ public final class CDPClientEvents {
 
     @SubscribeEvent
     public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
-        event.register(OtherWorld.EFFECTS, new DimensionSpecialEffects.OverworldEffects() {
+        if (CDPStartupConfigs.enableTerrariaLikeWorldGeneration()) event.register(OtherWorld.EFFECTS, new DimensionSpecialEffects.OverworldEffects() {
             @Override
             public boolean renderSky(ClientLevel level, int ticks, float partialTick, Matrix4f modelViewMatrix, Camera camera, Matrix4f projectionMatrix, boolean isFoggy, Runnable setupFog) {
                 return level.dimension() == OtherWorld.LEVEL && camera.getPosition().y < OverworldUtils.getCaveY();

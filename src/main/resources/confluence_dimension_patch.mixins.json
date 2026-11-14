@@ -3,6 +3,7 @@
     "minVersion": "0.8",
     "package": "org.mesdag.confluence_dimension_patch.mixin",
     "compatibilityLevel": "JAVA_21",
+    "refmap": "confluence_dimension_patch.refmap.json",
     "mixins": [
         "BiomeSourceMixin",
         "ChunkMapMixin",
